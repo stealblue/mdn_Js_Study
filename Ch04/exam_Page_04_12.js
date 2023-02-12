@@ -1,0 +1,1 @@
+var person, $elem, _name, first_name, val1; // 여러 개의 변수를 한 번에 선언할 수 있지만 가독성이 떨어져 권장하지는 않는다.

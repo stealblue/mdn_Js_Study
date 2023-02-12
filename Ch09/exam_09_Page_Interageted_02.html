@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 옵셔널 체이닝 연산자(optional chining operator)
+    // 좌항의 피연산자가 null 또는 undefined인 경우 undefined를 반환하고 그외의 경우 우항의 프로퍼티 참조를 이어간다.
+    var elem = null;
+    var value = elem?.value;
+    console.log(value); // undefined
+    value = elem && elem.value;
+    console.log(value); // null
+    var str = '';
+    var length = str && str.length;
+    console.log(length); //'' (&&로 단축평가할 때 문자열의 길이를 참조하지 못한다.)
+    length = str?.length;
+    console.log(length); // 0
+    // null 병합 연산자(nullish coalescing operator)
+    // 좌항의 피연산자가 null이나 undefined일때 우항의 피연산자를 반환하고, 그렇지 않으면 좌항의 피연산자를 반환한다.
+    // 변수의 기본값을 설정할 때 유용하다.
+    var foo = null ?? 'default String';
+    console.log(foo); // default String
+    foo = '' || 'default String';
+    console.log(foo); // default String
+    // null 병합 연산자는 좌항의 피연산자가 false로 평가되는 Falsy값(false, null, undefined, 0, -0, NaN, '')
+    // 이라도 null 또는 undefined가 아니면 좌항의 피연산자를 그대로 반환한다.
+    foo = '' ?? 'default String';
+    console.log(foo);
+    foo = 0 ?? 'default String';
+    console.log(foo);
+    foo = -0 ?? 'default String';
+    console.log(foo);
+    foo = false ?? 'default String';
+    console.log(foo);
+</script>
+</body>
+</html>
