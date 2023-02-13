@@ -71,11 +71,16 @@ const c2_1 = o2;
 console.log(c2_1 === o2);
 
 // 참조에 의한 전달
-// 원본 person을 사본 copy에 할당하면 원본 person의 참조 값을 복사해서 copy에 저장한다.
+// 원본 person2을 사본 copy2에 할당하면 원본 person2의 참조 값을 복사해서 copy2에 저장한다.
 // 두 객체 다 저장된 메모리 주소는 다르지만 동일한 참조 값을 가진다. (=동일한 객체를 가르킨다.)
 // 두 개의 식별자가 하나의 객체를 공유한다는 것은 원본이나 사본 중에서 객체를 변경하면 서로 영향을 받는다.
 // 객체의 프로퍼티 값을 변경, 프로퍼티 추가 및 삭제
 var person2 = {
     name : 'Lee'
 };
-var copy = person2;
+var copy2 = person2;
+console.log(person2);
+console.log(copy2);
+copy2.name = 'Kim';
+console.log(person2);
+console.log(copy2);
