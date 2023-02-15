@@ -4,9 +4,9 @@ var kind;
 if (num > 0) kind = '양수';
 else if (num < 0) kind = '음수';
 else kind = '영';
-console.log(kind);
+console.log(kind); // 양수
 // 조건문 (conditional statement)
-// if문은 논리적 참, 거짓으로 실행할 코드 블록에 주로 사용된다.
+// if문은 논리적 참, 거짓으로 실행할 코드 블록에 주로 사용된다.(암묵적 타입 변환까지 생각하자)
 // case문은 if문보다 다양한 상황에 따라 실행할 코드 블록에 주로 사용된다.
 // fall through를 이용한 윤달을 판별하는 case 문
 var year = 2000;

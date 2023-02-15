@@ -4,21 +4,25 @@
 // ++/-- 단항 산술 연산자
 var x = 5;
 var result;
+// 증감 단항 산술 연산자
+//             선증감   /      후증감
+//  선할당                    s++, s--
+//  후할당    ++s,--s
 // 선할당 후증가(postfix increment operator)
 result = x++;
-console.log(`resut : ${result}  
+console.log(`result : ${result}  
 x : ${x}`);
 // 선증가 후할당(prefix increment operator)
 result = ++x;
-console.log(`resut : ${result}  
+console.log(`result : ${result}  
 x : ${x}`);
 // 선할당 후감소(postfix decrement operator)
 result = x--;
-console.log(`resut : ${result}  
+console.log(`result : ${result}  
 x : ${x}`);
 // 선증가 후할당(prefix decrement operator)
 result = --x;
-console.log(`resut : ${result}  
+console.log(`result : ${result}  
 x : ${x}`);
 // + 단항 산술자는 숫자타입이 아닌 피연산자에게 사용시 숫자 타입으로 변환하여 반환한다.
 var s = '1';
@@ -45,10 +49,11 @@ console.log(s);
 s = 1 + 'Hello';
 console.log(s);
 // - 단항 산술 연산자는 피연산자의 부호를 반전한 값으로 반환한다. 부수 효과는 없다.
--(-10); // -10
+-(-10); // 10
 console.log(-(-10)); // 부호를 반전한다.
 -'10'; // -10
 console.log(-'10'); // 문자열을 숫자로 타입 변환후 반전한 값으로 반환한다.
+console.log(-'-10'); // 문자열을 숫자로 타입 변환후 반전한 값으로 반환한다.
 -true; // false
 console.log(-true); // 논리 값을 숫자로 타입 변환후 반전한 값으로 반환한다.
 -'Hello'; // NaN
@@ -122,15 +127,17 @@ console.log(!0);
 console.log(!'Hello');
 // 논리합, 논리곱 연산자의 결과 값이 boolean값이 아닐 수도 있다.
 // 논리합, 논리곱 연산자 표현식은 언제나 2개의 피연산자 중 어느 한쪽으로 평가된다.
-// boolean 값이 아닐시 논리합 연산자는 하나만 true로 평가되어도 true를 반환하는데 첫번째 피연산자의 값이 true라 그대로 반환
-// boolean 값이 아닐시 논리곱 연산자는 두개 다 true로 평가되어야 true를 반환하는데 두번째 피연산자의 값이 true라 그대로 반환
+// boolean 값이 아닐시 논리합 연산자는 하나만 true로 평가되어도 true를 반환하는데 첫번째 피연산자의 값이 Truthy라 그대로 반환
+// boolean 값이 아닐시 논리곱 연산자는 두개 다 true로 평가되어야 true를 반환하는데 두번째 피연산자의 값이 Truthy라 그대로 반환
 // 논리 연산의 결과를 결정하는 피연산자를 타입 변환하지 않고 그대로 반환하는 걸 단축 평가(short-circuit evaluation)라고 한다.
 // 표현식을 평가하는 도중에 평가결과가 확정된 경우 나머지 평가 결과를 생략하는 것을 말한다.
 // 조건문에서 Truthy 값일때 무언가 해야하면 논리곱, Falsy 값일때 무언가 해야하며 논리합 연산자로 if문을 대체할 수 있다.
-console.log('cat' || 'dog');
-console.log('dog' || 'cat');
-console.log('cat' && 'dog');
-console.log('dog' && 'cat');
+console.log('cat' || 'dog'); // cat
+console.log('dog' || 'cat'); // dog
+console.log('cat' && 'dog'); // dog
+console.log('dog' && 'cat'); // cat
+console.log(false || 'dog'); // dog
+console.log(false && 'dog'); // false
 
 // 쉼표 연산자(,)는 왼쪽 피연산자부터 평가하고 평가 결과 반환시 오른족 피연산자 결과 값부터 반환한다.
 // 그룹 연산자('()')는 연산자 우선순위가 가장 높다.
@@ -154,5 +161,5 @@ console.log((-5) ** 2); // 음수를 거듭제곱의 밑으로 사용할시 괄�
 // in(property 존재 확인)
 
 // 연산자의 부수효과(피연산자에게 영향을 미치는가)
-// 할당 연산자(=,+=,-=,*=,%=,/=), 증가/감소 연산자(++/--), delete
+// 할당 연산자(=,+=,-=,*=,%=,/=), 증가/감소 연산자(++/--), delete 가 해당
 
