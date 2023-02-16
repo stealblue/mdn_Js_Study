@@ -98,6 +98,10 @@ console.log(Number.isNaN(1+undefined)); // true
 // Object.is method는 보다 정확한 비교 결과를 반환한다.
 console.log(Object.is(-0, 0));
 console.log(Object.is(NaN, NaN));
+
+// 대소 관계 비교 연산자
+// >, <, <=, >=
+
 // 삼항 조건 연산자(ternary operator)
 // (조건식 ? true일시 반환값 : false일시 반환값)
 // 평가 결과가 boolean이 아닐시 암묵적 타입 변환
