@@ -89,7 +89,7 @@ var add1 = (function (){
     return function (x, y){
         return x + y + a;
     }
-});
+});자
 console.log(add1(1, 2)); // 13
 var add2 = (function (){
     var a = 10;
@@ -113,7 +113,7 @@ function argum_add(x, y){
     console.log(arguments);
     return x + y;
 }
-arrow_add(2, 5, 10);
+arrow_add(2, 5, 10); // 매개변수가 x, y 두 개이기에 10은 무시
 
 // 자바스크립트는 동적 타입 언어이기에 함수를 정의할 때 적절한 인수가 전달되었는지 확인할 필요가 있다.
 // 부적절한 호출을 방지할 수 있도록 타입스크립트와 같은 상위 확장을 도입하는 것도 방법이다.
