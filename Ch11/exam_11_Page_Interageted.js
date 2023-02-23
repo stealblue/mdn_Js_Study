@@ -53,6 +53,7 @@ console.log(c1 === o1); // false
 console.log(c1.x === o1.x); // Error
 // deep copy
 // lodash의 cloneDeep을 사용한 깊은 복사
+// lodash는 함수형 프로그래밍 패러다임을 사용하는 JS 라이브러리
 // "npm install lodash"로 lodash를 설치한 후 Node.js 환경에서 실행
 const _ = require('lodash');
 const c2 = _.cloneDeep(o1);
@@ -62,11 +63,11 @@ console.log(c2.x === o1.x); // false
 // 얕은 복사는 객체에 중첩되어 있는 객체의 경우 참조 값을 복사한다.
 // 깊은 복사는 객체에 중첩되어 있는 객체까지 모두 복사해서 원시 값처럼 완전한 복사본을 만든다.
 const v = 1;
-// 원시 값을 할당한 변수를 다른 변수에 할당하는 것을 깊은 복사라고 부르기도 한다.
+// 원시 값을 할당한 변수를 다른 변수에 할당하는 것을 깊은 복사라고 부르기도 한다.(값에 의한 전달)
 const c1_1 = v;
 console.log(c1_1 === v);
 const o2 = {x : 1};
-// 객체를 할당한 변수를 다른 변수에 할당하는 것을 얕은 복사라도 부르기도 한다.
+// 객체를 할당한 변수를 다른 변수에 할당하는 것을 얕은 복사라도 부르기도 한다.(참조에 의한 전달)
 const c2_1 = o2;
 console.log(c2_1 === o2);
 
