@@ -184,3 +184,4 @@ function factorial(n) {
     if (n <= 1) return 1; // 탈출조건 : n이 1일 때 재귀 호출을 멈춘다.
     return n * factorial(n - 1); // 재귀호출
 }
+// 함수 아직 덜 공부
